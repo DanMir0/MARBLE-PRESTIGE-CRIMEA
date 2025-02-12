@@ -7,17 +7,17 @@ const drawer = ref(false);
 const {mdAndUp} = useDisplay();
 </script>
 <template>
-  <v-app-bar app color="#424551" dark height="115">
+  <v-app-bar class="v-app-bar" color="#424551" dark height="115">
     <v-container class="d-flex align-center justify-between">
       <div class="d-flex align-center">
         <a href="#top">
           <img src="/logo1.svg" alt="Logo" class="mr-4 logo clickable"/>
         </a>
-        <h2 class="text-grey">PRESTIGE CRIMEA</h2>
+        <h2>PRESTIGE CRIMEA</h2>
       </div>
       <v-spacer></v-spacer>
       <div v-if="mdAndUp" class="d-flex justify-between align-center  d-none d-md-flex">
-        <v-btn color="#787A80" v-for="(item, index) in menuItems" :key="index" text>
+        <v-btn v-for="(item, index) in menuItems" :key="index" text>
           {{ item }}
         </v-btn>
       </div>
@@ -27,21 +27,22 @@ const {mdAndUp} = useDisplay();
           <v-col cols="auto" class="d-flex align-center">
             <img src="/phone.svg" class="mr-2"/>
             <div>
-              <p class="text-caption text-grey-lighten-1">Позвоните нам:</p>
+              <p>Позвоните нам:</p>
               <a href="tel:+79780000082" class="contact-link">+7(978) 000-00-82</a>
             </div>
           </v-col>
           <v-col cols="auto" class="d-flex align-center">
             <img src="/Chat.svg" class="mr-2"/>
             <div>
-              <p class="text-caption text-grey-lighten-1">Напишите нам:</p>
+              <p>Напишите нам:</p>
               <a href="mailto:OsmanAga.com" target="_blank" class="contact-link">OsmanAga.com</a>
             </div>
           </v-col>
         </v-row>
       </div>
 
-      <v-app-bar-nav-icon icon="mdi mdi-menu" class="d-flex d-md-none" @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon icon="mdi mdi-menu" class="d-flex d-md-none"
+                          @click="drawer = !drawer"></v-app-bar-nav-icon>
     </v-container>
   </v-app-bar>
 
@@ -54,19 +55,32 @@ const {mdAndUp} = useDisplay();
     <v-divider></v-divider>
     <v-list>
       <v-list-item>
-        <v-icon color="accent" size="24" class="mr-2">mdi-phone</v-icon>
-        <a href="tel:+79780000082" class="contact-link">+7(978) 000-00-82</a>
+        <v-list-item-title class="d-flex align-center">
+          <img src="/phone.svg" class="mr-2"/>
+          <a href="tel:+79780000082" class="contact-link color-black">+7(978) 000-00-82</a>
+        </v-list-item-title>
       </v-list-item>
       <v-list-item>
-        <v-icon color="accent" size="24" class="mr-2">mdi-message-text</v-icon>
-        <a href="https://OsmanAga.com" target="_blank" class="contact-link">OsmanAga.com</a>
+        <v-list-item-title class="d-flex align-center">
+          <img src="/Chat.svg" class="mr-2"/>
+          <a href="https://OsmanAga.com" target="_blank"
+             class="contact-link color-black">OsmanAga.com</a>
+        </v-list-item-title>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 <style scoped>
-.text-grey {
-  color: #787A80;
+button:hover {
+  color: #FF5A30;
+}
+
+.v-app-bar {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.color-black {
+  color: #222222 !important;
 }
 
 .logo {
@@ -83,7 +97,7 @@ const {mdAndUp} = useDisplay();
 
 .contact-link {
   text-decoration: none;
-  color: #181818;
+  color: #f2f2f2;
   font-weight: bold;
 }
 
