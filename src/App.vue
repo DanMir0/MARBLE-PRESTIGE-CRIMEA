@@ -1,8 +1,11 @@
 <script setup>
+import Header from "@/components/Header.vue";
 </script>
 
 <template>
-
+  <v-app>
+      <Header></Header>
+  </v-app>
 </template>
 
 <style scoped>

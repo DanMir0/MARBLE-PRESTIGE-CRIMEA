@@ -1,8 +1,12 @@
 import {createVuetify} from 'vuetify';
 import * as components from 'vuetify/components'; // Импорт всех компонентов
 import * as directives from 'vuetify/directives'; // Импорт всех директив
+import '@mdi/font/css/materialdesignicons.css';
 
 const vuetify = createVuetify({
+  icons: {
+    defaultSet: 'mdi',
+  },
   theme: {
     options: {
       customProperties: true,
@@ -10,14 +14,17 @@ const vuetify = createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#9155FD', // основной цвет
-          secondary: '#8A8D93', // второстепенный цвет
-          accent: '#0d6efd',
-          success: '#56CA00',
-          info: '#16B1FF',
-          warning: '#FFB400',
-          error: '#FF4C51',
+          primary: '#FFFFFF', // основной цвет
+          secondary: '#787A80', // второстепенный цвет
+          accent: '#FF5A30',
+          // success: '#56CA00',
+          // info: '#16B1FF',
+          // warning: '#FFB400',
+          // error: '#FF4C51',
         },
+        typography: {
+          fontFamily: 'Ubuntu, sans-serif',
+        }
       },
     },
   },
